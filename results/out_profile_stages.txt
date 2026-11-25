@@ -1,0 +1,55 @@
+=== Testbed Hardware & Software Specifications ===
+- CPU: Apple M4 (10 logical cores)
+- RAM: 16.0 GB
+- OS: Darwin 15.5 (arm64)
+- Runtime: Python 3.11.18 | OpenCV 4.10.0 (CPU-only, no GPU)
+
+=== Per-Stage Latency Breakdown (video1, 2189 frames) ===
+| Pipeline Stage | Invocations | Latency / Call (ms) | Amortized / Frame (ms) | Share (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| 1. Illum.-Normalized Edge Segmentation | 2189 | 1.624 | 1.624 | 90.8% |
+| 2. Contour Extraction & Drift-Bounded Tracking | 2189 | 0.102 | 0.102 | 5.7% |
+| 3. MobileNet-SSD Static Verification (Head 1) | 2 | 11.74 | 0.0107 | 0.60% |
+| 4. YOLOv3-tiny Person Veto (Head 2a) | 2 | 31.73 | 0.0290 | 1.62% |
+| 5. YOLOv3-tiny Multi-Probe Owner Lookup (Head 2b) | 1 | 47.64 | 0.0218 | 1.22% |
+| **Total End-to-End** | **2189** | — | **1.788 ms (559.4 FPS)** | **100.0%** |
+
+=== Per-Stage Latency Breakdown (video3, 2608 frames) ===
+| Pipeline Stage | Invocations | Latency / Call (ms) | Amortized / Frame (ms) | Share (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| 1. Illum.-Normalized Edge Segmentation | 2608 | 2.035 | 2.035 | 93.8% |
+| 2. Contour Extraction & Drift-Bounded Tracking | 2608 | 0.081 | 0.081 | 3.7% |
+| 3. MobileNet-SSD Static Verification (Head 1) | 2 | 11.40 | 0.0087 | 0.40% |
+| 4. YOLOv3-tiny Person Veto (Head 2a) | 2 | 34.15 | 0.0262 | 1.21% |
+| 5. YOLOv3-tiny Multi-Probe Owner Lookup (Head 2b) | 1 | 50.08 | 0.0192 | 0.88% |
+| **Total End-to-End** | **2608** | — | **2.170 ms (460.8 FPS)** | **100.0%** |
+
+=== Per-Stage Latency Breakdown (video9, 2485 frames) ===
+| Pipeline Stage | Invocations | Latency / Call (ms) | Amortized / Frame (ms) | Share (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| 1. Illum.-Normalized Edge Segmentation | 2485 | 2.087 | 2.087 | 91.3% |
+| 2. Contour Extraction & Drift-Bounded Tracking | 2485 | 0.137 | 0.137 | 6.0% |
+| 3. MobileNet-SSD Static Verification (Head 1) | 2 | 12.87 | 0.0104 | 0.45% |
+| 4. YOLOv3-tiny Person Veto (Head 2a) | 2 | 40.16 | 0.0323 | 1.41% |
+| 5. YOLOv3-tiny Multi-Probe Owner Lookup (Head 2b) | 1 | 46.66 | 0.0188 | 0.82% |
+| **Total End-to-End** | **2485** | — | **2.286 ms (437.4 FPS)** | **100.0%** |
+
+=== Per-Stage Latency Breakdown (video10, 2260 frames) ===
+| Pipeline Stage | Invocations | Latency / Call (ms) | Amortized / Frame (ms) | Share (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| 1. Illum.-Normalized Edge Segmentation | 2260 | 2.051 | 2.051 | 91.5% |
+| 2. Contour Extraction & Drift-Bounded Tracking | 2260 | 0.135 | 0.135 | 6.0% |
+| 3. MobileNet-SSD Static Verification (Head 1) | 2 | 11.96 | 0.0106 | 0.47% |
+| 4. YOLOv3-tiny Person Veto (Head 2a) | 2 | 27.60 | 0.0244 | 1.09% |
+| 5. YOLOv3-tiny Multi-Probe Owner Lookup (Head 2b) | 1 | 45.78 | 0.0203 | 0.90% |
+| **Total End-to-End** | **2260** | — | **2.240 ms (446.4 FPS)** | **100.0%** |
+
+=== Per-Stage Latency Breakdown (video11, 4501 frames) ===
+| Pipeline Stage | Invocations | Latency / Call (ms) | Amortized / Frame (ms) | Share (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| 1. Illum.-Normalized Edge Segmentation | 4501 | 2.102 | 2.102 | 86.9% |
+| 2. Contour Extraction & Drift-Bounded Tracking | 4501 | 0.252 | 0.252 | 10.4% |
+| 3. MobileNet-SSD Static Verification (Head 1) | 7 | 10.30 | 0.0160 | 0.66% |
+| 4. YOLOv3-tiny Person Veto (Head 2a) | 6 | 21.51 | 0.0287 | 1.18% |
+| 5. YOLOv3-tiny Multi-Probe Owner Lookup (Head 2b) | 2 | 47.92 | 0.0213 | 0.88% |
+| **Total End-to-End** | **4501** | — | **2.420 ms (413.2 FPS)** | **100.0%** |

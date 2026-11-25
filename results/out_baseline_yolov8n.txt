@@ -1,0 +1,20 @@
+WARNING ⚠️ Ultralytics settings updated to the latest schema. Existing values were preserved where possible. 
+View Ultralytics Settings with 'yolo settings' or at '/Users/affan/Library/Application Support/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings
+| Video | GT | TP | FP | FN | Delay (s) | FPS |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| video1 | 1 | 0 | 0 | 1 | - | 59.9 |
+| video2 | 1 | 0 | 0 | 1 | - | 76.8 |
+| video3 | 1 | 0 | 0 | 1 | - | 77.1 |
+| video4 | 1 | 0 | 0 | 1 | - | 77.7 |
+| video5 | 1 | 0 | 0 | 1 | - | 76.9 |
+| video6 | 2 | 0 | 0 | 2 | - | 76.8 |
+| video7 | 1 | 0 | 0 | 1 | - | 77.4 |
+| video8 | 1 | 0 | 0 | 1 | - | 76.6 |
+| video9 | 1 | 0 | 0 | 1 | - | 77.2 |
+| video10 | 1 | 1 | 0 | 0 | -2.0 | 76.1 |
+| video11 | 1 | 0 | 0 | 1 | - | 67.3 |
+
+| Configuration | TP | FP | FN | Precision [95% CI] | Recall [95% CI] | F1 | Mean delay (s) | FPS |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Continuous YOLOv8n + same decision rule (416px, conf 0.25) | 1 | 0 | 11 | 1.000 [0.21,1.00] | 0.083 [0.01,0.35] | 0.154 | -2.0 | 74.4 |

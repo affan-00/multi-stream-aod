@@ -1,0 +1,44 @@
+
+| delta_max | theta_s | TP | FP | FN | F1 (all videos, in-sample) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 20.0 | 90 | 8 | 8 | 4 | 0.571 |
+| 20.0 | 120 | 7 | 5 | 5 | 0.583 |
+| 20.0 | 146 | 7 | 4 | 5 | 0.609 |
+| 20.0 | 180 | 7 | 2 | 5 | 0.667 |
+| 30.0 | 90 | 8 | 10 | 4 | 0.533 |
+| 30.0 | 120 | 7 | 5 | 5 | 0.583 |
+| 30.0 | 146 | 7 | 4 | 5 | 0.609 |
+| 30.0 | 180 | 7 | 3 | 5 | 0.636 |
+| 40.0 | 90 | 8 | 10 | 4 | 0.533 |
+| 40.0 | 120 | 7 | 5 | 5 | 0.583 |
+| 40.0 | 146 | 7 | 4 | 5 | 0.609 |
+| 40.0 | 180 | 7 | 3 | 5 | 0.636 |
+| 60.0 | 90 | 8 | 10 | 4 | 0.533 |
+| 60.0 | 120 | 7 | 5 | 5 | 0.583 |
+| 60.0 | 146 | 7 | 4 | 5 | 0.609 |
+| 60.0 | 180 | 7 | 3 | 5 | 0.636 |
+| 80.0 | 90 | 8 | 10 | 4 | 0.533 |
+| 80.0 | 120 | 7 | 5 | 5 | 0.583 |
+| 80.0 | 146 | 7 | 4 | 5 | 0.609 |
+| 80.0 | 180 | 7 | 3 | 5 | 0.636 |
+| inf | 90 | 8 | 15 | 4 | 0.457 |
+| inf | 120 | 7 | 6 | 5 | 0.560 |
+| inf | 146 | 7 | 4 | 5 | 0.609 |
+| inf | 180 | 7 | 3 | 5 | 0.636 |
+
+Leave-one-video-out selection:
+  held-out video1   chose delta_max=20.0, theta_s=180
+  held-out video2   chose delta_max=20.0, theta_s=180
+  held-out video3   chose delta_max=20.0, theta_s=180
+  held-out video4   chose delta_max=20.0, theta_s=180
+  held-out video5   chose delta_max=20.0, theta_s=180
+  held-out video6   chose delta_max=20.0, theta_s=180
+  held-out video7   chose delta_max=20.0, theta_s=180
+  held-out video8   chose delta_max=20.0, theta_s=180
+  held-out video9   chose delta_max=20.0, theta_s=180
+  held-out video10  chose delta_max=20.0, theta_s=180
+  held-out video11  chose delta_max=40.0, theta_s=146
+
+LOVO result: TP=7 FP=4 FN=5 P=0.636 R=0.583 F1=0.609
+Fixed default (40, 146): TP=7 FP=4 FN=5 F1=0.609
+In-sample best (20.0, 180): F1=0.667  (optimistic; do NOT report as performance)

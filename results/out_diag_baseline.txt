@@ -1,0 +1,24 @@
+video1 GT0 @416px: any-class 100% | bag-class  77% | seen as: handbag x43 (max 0.31), bird x15 (max 0.62), backpack x14 (max 0.33)
+video1 GT0 @640px: any-class 100% | bag-class  75% | seen as: handbag x45 (max 0.27), bird x16 (max 0.78), suitcase x5 (max 0.25)
+video2 GT0 @416px: any-class   0% | bag-class   0% | seen as: none
+video2 GT0 @640px: any-class   0% | bag-class   0% | seen as: none
+video3 GT0 @416px: any-class   0% | bag-class   0% | seen as: none
+video3 GT0 @640px: any-class   5% | bag-class   0% | seen as: car x3 (max 0.13)
+video4 GT0 @416px: any-class   0% | bag-class   0% | seen as: none
+video4 GT0 @640px: any-class   0% | bag-class   0% | seen as: none
+video5 GT0 @416px: any-class   3% | bag-class   0% | seen as: person x2 (max 0.35)
+video5 GT0 @640px: any-class  12% | bag-class   0% | seen as: skateboard x6 (max 0.29), person x1 (max 0.19), car x1 (max 0.11)
+video6 GT0 @416px: any-class   0% | bag-class   0% | seen as: none
+video6 GT0 @640px: any-class   0% | bag-class   0% | seen as: none
+video6 GT1 @416px: any-class   0% | bag-class   0% | seen as: none
+video6 GT1 @640px: any-class  15% | bag-class   0% | seen as: toilet x8 (max 0.20), skateboard x2 (max 0.16)
+video7 GT0 @416px: any-class 100% | bag-class   0% | seen as: chair x166 (max 0.20), laptop x60 (max 0.31), couch x39 (max 0.19)
+video7 GT0 @640px: any-class  82% | bag-class   0% | seen as: dining table x64 (max 0.28), chair x2 (max 0.25)
+video8 GT0 @416px: any-class  67% | bag-class   0% | seen as: laptop x34 (max 0.20), chair x25 (max 0.19)
+video8 GT0 @640px: any-class  77% | bag-class   2% | seen as: chair x30 (max 0.22), bench x21 (max 0.22), sink x11 (max 0.21)
+video9 GT0 @416px: any-class 100% | bag-class   0% | seen as: dining table x60 (max 0.28), tv x60 (max 0.36), laptop x55 (max 0.24)
+video9 GT0 @640px: any-class 100% | bag-class   0% | seen as: dining table x120 (max 0.40), tv x60 (max 0.29), laptop x46 (max 0.31)
+video10 GT0 @416px: any-class 100% | bag-class 100% | seen as: backpack x60 (max 0.23), handbag x59 (max 0.29), dining table x56 (max 0.17)
+video10 GT0 @640px: any-class 100% | bag-class 100% | seen as: suitcase x60 (max 0.47), handbag x60 (max 0.26), backpack x59 (max 0.26)
+video11 GT0 @416px: any-class  52% | bag-class   0% | seen as: person x31 (max 0.24)
+video11 GT0 @640px: any-class 100% | bag-class   0% | seen as: person x60 (max 0.33)
