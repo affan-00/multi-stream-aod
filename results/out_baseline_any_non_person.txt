@@ -1,0 +1,2 @@
+YOLOv8n any-non-person (416px, conf 0.25): TP=2 FP=37 FN=10 | P=0.051 [0.01,0.17] R=0.167 [0.05,0.45] F1=0.078 | FPS=73.1
+YOLOv8n any-non-person (640px, conf 0.1): TP=2 FP=64 FN=10 | P=0.030 [0.01,0.10] R=0.167 [0.05,0.45] F1=0.051 | FPS=35.0
