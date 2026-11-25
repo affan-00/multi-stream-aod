@@ -108,16 +108,16 @@ class BaselineAOD:
         return new
 
 
-def yolo_detect_fn(weights, imgsz, conf):
+def yolo_detect_fn(weights, imgsz, conf, any_non_person=False):
     from ultralytics import YOLO
     model = YOLO(weights)
 
     def detect(frame):
-        r = model.predict(frame, imgsz=imgsz, conf=conf, device="cpu", verbose=False,
-                          classes=[PERSON] + BAG_CLASSES)[0]
+        kw = {} if any_non_person else {"classes": [PERSON] + BAG_CLASSES}
+        r = model.predict(frame, imgsz=imgsz, conf=conf, device="cpu", verbose=False, **kw)[0]
         bags, persons = [], []
-        for b, c in zip(r.boxes.xyxy.tolist(), r.boxes.cls.tolist()):
-            box = [int(v) for v in b]
+        for b_, c in zip(r.boxes.xyxy.tolist(), r.boxes.cls.tolist()):
+            box = [int(v) for v in b_]
             (persons if int(c) == PERSON else bags).append(box)
         return bags, persons
     return detect
@@ -158,11 +158,13 @@ def main():
     ap.add_argument("--pad", type=int, default=30)
     ap.add_argument("--max-delay-s", type=float, default=60.0)
     ap.add_argument("--early-tol-s", type=float, default=7.0)
+    ap.add_argument("--any-non-person", action="store_true",
+                    help="treat EVERY non-person COCO detection as a candidate object (instead of bag classes only)")
     args = ap.parse_args()
 
     gt = json.load(open(args.gt))
     videos = sorted(glob.glob(os.path.join(args.dir, "*.avi")), key=natural_key)
-    detect = yolo_detect_fn(args.weights, args.imgsz, args.conf)
+    detect = yolo_detect_fn(args.weights, args.imgsz, args.conf, args.any_non_person)
     TP = FP = FN = frames = 0
     comp, delays = 0.0, []
     print("| Video | GT | TP | FP | FN | Delay (s) | FPS |\n| :--- | :---: | :---: | :---: | :---: | :---: | :---: |")
@@ -185,7 +187,7 @@ def main():
     md = sum(delays) / len(delays) if delays else float("nan")
     print("\n| Configuration | TP | FP | FN | Precision [95% CI] | Recall [95% CI] | F1 | Mean delay (s) | FPS |")
     print("| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |")
-    print(f"| Continuous YOLOv8n + same decision rule ({args.imgsz}px, conf {args.conf}) | {TP} | {FP} | {FN} | "
+    print(f"| Continuous YOLOv8n {'any-non-person' if args.any_non_person else 'bag-only'} + same decision rule ({args.imgsz}px, conf {args.conf}) | {TP} | {FP} | {FN} | "
           f"{p:.3f} [{plo:.2f},{phi:.2f}] | {r:.3f} [{rlo:.2f},{rhi:.2f}] | {f1:.3f} | {md:.1f} | {frames / comp:.1f} |")
 
 

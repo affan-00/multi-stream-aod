@@ -10,10 +10,10 @@ import numpy as np
 from abandoned_object_detector import AbandonedObjectDetector
 
 CAMERA_SOURCES: Dict[str, Union[int, str]] = {
-    "CAM_1": "video1.avi",
-    "CAM_2": "video2.avi",
-    "CAM_3": "video9.avi",
-    "CAM_4": "video10.avi",
+    "CAM_1": "ABODA/video1.avi",
+    "CAM_2": "ABODA/video2.avi",
+    "CAM_3": "ABODA/video9.avi",
+    "CAM_4": "ABODA/video10.avi",
 }
 
 DISPLAY_TILE_SIZE = (480, 270)     

@@ -10,7 +10,7 @@ class Detector:
 
     Changes vs. the original:
       * swap_rb: Darknet models expect RGB; OpenCV loads frames as BGR. The original used swapRB=False.
-        Default is controlled by env var YOLO_SWAPRB (0 = original behaviour, 1 = corrected) so the SAME
+        Default is RGB (correct for Darknet). Set env var YOLO_SWAPRB=0 to reproduce the original BGR behaviour so the SAME
         code can be run both ways for the paper without editing files.
       * Output-layer names are computed once in __init__ instead of on every detect() call (speed only).
     """
@@ -22,7 +22,7 @@ class Detector:
         self.confidence = confidence
         self.threshold = threshold
         if swap_rb is None:
-            swap_rb = os.environ.get("YOLO_SWAPRB", "0") == "1"
+            swap_rb = os.environ.get("YOLO_SWAPRB", "1") == "1"
         self.swap_rb = swap_rb
         ln = self.net.getLayerNames()
         self.out_layers = [ln[i - 1] for i in np.array(self.net.getUnconnectedOutLayers()).flatten()]
